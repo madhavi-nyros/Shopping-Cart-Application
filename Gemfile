@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'mysql'
 gem 'devise'
 gem 'omniauth'
@@ -28,7 +28,7 @@ gem 'activemerchant'
 #gem "will_paginate", "3.0.pre4"
 gem 'heroku'
 group :development, :test do
-  gem 'sqlite3'
+  gem 'mysql'
 end
 group :production do
   gem 'pg'
