@@ -1,0 +1,52 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" %>
+
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :card_type %><br />
+    <%= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
+  </div>
+
+  
+<div class="field">
+    <%= f.label :month %>
+    <%= f.calendar_date_select :created_at %>
+  </div>
+  <br />
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+  <br />
+<div class="field">
+    <%= f.label :verification_value %>
+    <%= f.text_field :verification_value %>
+  </div>
+<div>
+<%= f.label :card_number %>
+<%= f.text_field :card_number %>
+</div>
+  <div class="actions">
+    <%= button_to "submit",:action => "express", :controller => "orders", :method => "get" %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+<span class="dispcategory">Category:<%= @category.categoryname %></span>
+<%#= link_to "back",new_category_path %>
+
+ <%= form_for @product, :url =>{:action => :create, :id=>@category.id} do |f| %>
+
+<table>
+<tr>
+<td>Productname:</td><td><%= f.text_field:productname %></td></tr>
+<tr><td>description:</td><td><%= f.text_field:description %></td></tr>
+<tr><td>price:</td><td><%= f.text_field:price %></td></tr>
+<tr><td><%= f.label :avatar %></td>
+   <td> <%= f.file_field :avatar %></td></tr>
+<tr><td><%= f.label :expires_on %></td>
+<td><input type="Text" id="expires_on" name="product[expires_on]" maxlength="25" size="15" style="width:200px;"/>
+
+        <a href="javascript:NewCssCal('expires_on','yyyymmdd','arrow')" style="cursor:pointer"><img src="/assets/cal.gif" /></a></td>
+
+</tr>
+
+<tr><%= f.submit 'create'%></tr>
+</table>
+<% end %>
+
+<br/> 
+<table border="0" cellpadding="10">
+<tr>
+<th></th>
+<th>productname</th>
+<th>description</th>
+<th>Price</th>
+</tr>
+<% if @category.products.exists? %>
+<% for item in @category.products %>
+<tr>
+<td><%= image_tag item.avatar.url %></td>
+<td><%= item.productname %></td>
+<td><%= item.description %></td>
+<td><%= item.price %></td>
+</tr>
+<% end %>
+
+</table>
+<% else %>
+No products yet
+<% end %>
+
+
+

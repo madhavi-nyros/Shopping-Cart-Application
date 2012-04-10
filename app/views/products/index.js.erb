@@ -1,0 +1,4 @@
+$('#page_links').html('<%= escape_javascript(will_paginate @products) %>');
+
+$("#paginator").html("<%= escape_javascript(render @products) %>");
+

@@ -1,0 +1,40 @@
+
+<h1>Listing products</h1>
+
+
+<table cellpadding="5" cellspacing="5" ,cellpadding="5">
+<tr>
+ <% if user_signed_in? %>
+        Signed in as  <%= current_user.email %>. Not you?<%= link_to "Sign out", destroy_user_session_path %>
+<p class="dispcategory">Welcome <%= current_user.email %>
+<span class="selecting"><%= link_to "create your products", new_category_path %></span>&nbsp&nbsp&nbsp</p>
+        <% end %>
+</tr>
+  <tr>
+
+<th>product</th>
+    <th>Productname</th>
+    <th>Description</th>
+    <th>Expires_on</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+
+<tbody id="paginator">
+<%= render @products %> 
+
+</tbody>
+</table>
+
+<br />
+
+<%#= link_to "new product", new_product_path %>
+
+<div id="page_links">
+ 
+<%#= will_paginate @products,:format => :js,:remote => true %>
+</div>
+

@@ -1,0 +1,19 @@
+
+<table border="0" cellpadding="5">
+<tr>
+
+</tr>
+<% for item in @categories %>
+<tr>
+<td>
+
+
+<%= link_to item.categoryname, :controller => :products, :action => :new, :id =>item.id %></td>
+</tr>
+<% end %>
+
+
+
+</table>
+
+

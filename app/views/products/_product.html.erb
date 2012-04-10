@@ -1,0 +1,16 @@
+
+<tr>
+	
+	<td><%= image_tag product.avatar.url %></td>
+    <td><p class="heading"><%=product.productname %></p></td>
+   <td> <p class="content"><%= product.description %>
+    <a href="#" title="to know latest news about dell laptops click here">See More..</a>
+<%= button_to "Buynow",new_order_path, :class => "signup-form"%></td>
+	
+	<td><%= disp(product.expires_on, product.created_at) %></td>
+<%#= link_to 'Show', product_path(product) %>
+
+   
+   
+  </tr>
+
